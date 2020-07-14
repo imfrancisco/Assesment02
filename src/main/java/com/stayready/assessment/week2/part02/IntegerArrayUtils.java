@@ -1,5 +1,10 @@
 package com.stayready.assessment.week2.part02;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class IntegerArrayUtils {
     /**
      * @param integerArray - array to have value added to it
@@ -7,7 +12,13 @@ public class IntegerArrayUtils {
      * @return - identical array with one additional element of `valueToBeAdded` at the end of the array
      */
     public static Integer[] add(Integer[] integerArray, Integer valueToBeAdded) {
-        return null;
+        Integer[] newIntArray = new Integer[integerArray.length + 1];
+        for (int index = 0; index < integerArray.length; index++)
+        {
+            newIntArray[index] = integerArray[index];
+            newIntArray[integerArray.length] = valueToBeAdded;
+        }
+        return newIntArray;
     }
 
     /**
@@ -17,7 +28,11 @@ public class IntegerArrayUtils {
      * @return `integerArray` with `valueToBeInserted` at index number `indexToInsertAt`
      */
     public static Integer[] replace(Integer[] integerArray, int indexToInsertAt, Integer valueToBeInserted) {
-        return null;
+        ArrayList<Integer> intList = new ArrayList<>(Arrays.asList(integerArray));
+        intList.add(indexToInsertAt, valueToBeInserted);
+
+        //Integer[] newIntArray = new Integer[intList.size()];
+        return intList.toArray(new Integer[0]);
     }
 
     /**
@@ -26,7 +41,7 @@ public class IntegerArrayUtils {
      * @return element located at `indexToFetch`
      */
     public static Integer get(Integer[] integerArray, Integer indexToFetch) {
-        return null;
+        return integerArray[indexToFetch];
     }
 
     /**
